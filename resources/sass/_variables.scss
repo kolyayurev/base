@@ -1,0 +1,66 @@
+
+$maxWidth: 1920;
+$minWidth: 320;
+$vw-enable: true;
+
+$breakpoints: (
+  "max"   : 1920px,
+  "xxl"   : 1400px,
+  "xl"    : 1200px,
+  "lg"    : 992px,
+  "md"    : 768px,
+  "sm"    : 576px,
+  "w400"  : 400px,
+  "min"   : 320px,
+  "mobile": 576px,
+);
+
+$headers: (
+  "h1":  60px,
+  "h2":  36px,
+  "h3":  34px,
+  "h4":  20px,
+  "h5":  18px,
+  "h6":  16px,
+);
+
+$z-indexs: (
+  "modal"          : 50,
+  "header"         : 20,
+  "loading"        : 10,
+  "widget"         : 5,
+  "float-panel"    : 5,
+  "above"          : 2,
+  "page"           : 1,
+  "under"          : 0
+);
+
+
+$colors_theme : (
+  "primary"   : "indigo",
+);
+
+$project_colors : (
+  "indigo"  : #8965EE,
+  "dark-indigo"  : #271539,
+  "white-indigo":#f8f5ff,
+  "grey"  : #9F9F9F,
+  "light-grey"  : #F7F7F7,
+  "white" : #FFFFFF,
+  "black" : #232323,
+
+  "border-grey" :  #E3E3E3,
+
+  "background-light": #F7F7F7,
+  "background-white": #FFFFFF,
+  "background-dark-gray": #ECECEC,
+
+  "text-black": #232323,
+  "text-dark-gray": #7B7979,
+  "text-light-gray": #F9F9F9,
+  "text-white": #ffffff,
+);
+
+    
+
+

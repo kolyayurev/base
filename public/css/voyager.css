@@ -1,0 +1,29 @@
+.browse__sorting {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.browse__sorting .form-search:not(:last-child) {
+  margin-right: 5px;
+}
+
+.mce-content-body ol {
+  list-style: none;
+  counter-reset: li;
+}
+
+.mce-content-body ol li:before {
+  counter-increment: li;
+  content: counters(li, ".") ". ";
+}
+
+.panel.widget .dimmer {
+  background: rgba(45, 53, 61, 0.5) !important;
+}
+
+

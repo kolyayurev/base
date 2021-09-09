@@ -1,0 +1,53 @@
+.error-page{
+    
+   
+    &__container{
+        display: flex;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        @include  mq(md){
+            padding-top: 80px;
+            flex-direction:column;
+        }
+    }
+    &__img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-basis: 30%;
+        .image{
+            width: 100%;
+            max-width: 300px;
+        }
+        @include  mq(xl){
+            flex-basis: 50%;
+        }
+        @include  mq(md){
+            display: none;
+        }
+    }
+    &__content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    &__code{
+        width: 100%;
+        font-size: 7rem;
+        color: cl(text-dark-gray);
+    }
+    &__message{
+        width: 100%;
+        font-size: 4rem;
+        color: cl(text-dark-gray);
+        @include  mq(md){
+            font-size: 2rem;
+        }
+    }
+    &__search{
+        width: 100%;
+        margin: 2rem auto;
+    }
+}

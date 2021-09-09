@@ -1,0 +1,66 @@
+//slick
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+.slick-dots {
+    bottom: -40px;
+    li {
+        width: 40px;
+        height: 40px;
+        margin: 0 5px;
+        padding: 0;
+        button {
+            font-size: 0;
+            line-height: 0;
+            width: 40px;
+            height: 40px;
+            padding: 5px;
+            &:before{
+                font-size: 20px;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                color: cl(gray);
+                opacity: .75;
+            }
+        }
+        &.slick-active button:before {
+            opacity: .75;
+            color: cl(primary);
+        }
+    }
+}
+.slick-initialized .slick-slide{
+    &.page-slider__item{
+        display: flex;
+    }
+}
+
+.promo-slider{
+    // visibility: hidden;
+
+    &.slick-dotted.slick-slider{
+        margin-bottom: 0;
+    }
+    .slick-dots {
+        bottom: 0px;
+    }
+    .slick-dots li button:before{
+        opacity: 1;
+    }
+    .slick-list{
+        height: 100%;
+    }
+    &.slick-initialized{
+        // visibility: inherit;
+    }
+    .slick-track {
+        display: flex;
+        height: 100%;
+    }
+    .slick-track .slick-slide {
+        display: flex;
+        height: auto;
+    }
+}
+

@@ -1,0 +1,39 @@
+.breadcrumbs {
+    &__items{
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+    }
+    &__item {
+        // margin-right: 8px;
+        
+        &::after {
+            content: ">";
+            display: inline-block;
+            width: 1em;
+            color: cl(text-black,0.4);
+        }
+        &:last-child {
+            margin-left: 0;
+            &::after {
+                display: none;
+            }
+        }
+        
+    }
+    &__link{
+        &.disabled{
+            pointer-events: none;
+            cursor: default;
+        }
+        span{
+            font-size: 14px;
+            color: cl(text-black,0.4);
+            transition: color .5s ease;
+            &:hover{
+                color: cl(primary);
+            }
+        }
+    
+    }
+}

@@ -1,0 +1,54 @@
+.ui-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    opacity: 0.8;
+    transition: all 0.3s ease-in;
+    max-width: 100%;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 121%;
+    letter-spacing: 0.005em;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    padding: 15px 20px;
+    &[disabled="disabled"]
+    {
+        color: cl(border-grey);
+    }
+    &:hover {
+        opacity: 1;
+    }
+    &-primary{
+        border-color: cl(primary);
+        background-color: cl(primary);
+        color: cl(white);
+        &:hover{
+            background-color: transparent;
+            color: cl(primary);  
+        }
+    }
+    &-outline-primary{
+        border-color: cl(primary);
+        color: cl(primary);
+        &:hover{
+            background-color: cl(primary);
+            color: cl(white);  
+        }
+    }
+    &-white{
+        border-color: cl(white);
+        background-color: cl(white);
+        &:hover{
+            border-color: cl(primary);
+            background-color: cl(primary);
+            color: cl(white);  
+        }
+    }
+    
+}

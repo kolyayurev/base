@@ -1,0 +1,48 @@
+.browse__sorting{
+    display: flex;
+    flex-wrap: wrap;
+    .form-search:not(:last-child){
+        margin-right: 5px;
+    }
+}
+.mce-content-body {
+    ol {
+        list-style: none;
+        counter-reset: li;
+        li:before {
+            counter-increment: li;
+            content: counters(li, ".") ". ";
+        }
+    }
+}
+.panel.widget .dimmer {
+    background: rgba(45,53,61,.5) !important;
+}
+
+.browse__indications{
+    .panel{
+        margin-bottom: 0;
+    }
+}
+.editing__states{
+    display: flex;
+    flex-direction: column;
+}
+.state{
+    
+    &__buttons{
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: .5rem;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+    &__comment{
+
+    }
+}
+.editing__transition-to{
+    margin-right: .5rem;
+    margin-bottom: .5rem;
+}

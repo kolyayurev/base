@@ -1,0 +1,48 @@
+// px to vw 
+@function vw($px, $base-vw: 1920px) {
+    @if $vw-enable {
+        @return ($px * 100vw) / $base-vw;
+    }
+
+    @return $px;
+}
+
+// header height
+@function hh($type) {
+  @if map_has_key($headers, $type) {
+    @return map_get($headers, $type);
+  }
+  @else
+  {
+    @error 'Wrong header type "#{$type}" in header list; ';
+    @return null;
+  }
+}
+@function hexToRGB($hex) {
+    @return red($hex),green($hex),blue($hex);
+}
+// color
+@function cl($name, $opacity: false) {
+    @if $opacity {
+        @return rgba(var(--color-#{$name}--rgb), $opacity);
+    }
+
+    @else {
+        @return var(--color-#{$name});
+    }
+}
+// z-index
+@function z($key) {
+  @return map-get($z-indexs, $key);
+}
+// adaptive value
+@function av($startSize,$minSize:null) {
+  @if($minSize == null)
+  {
+    $minSize: $startSize/($maxWidth/$minWidth);
+  }
+
+  $addSize: $startSize - $minSize;
+  @return calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px})/(#{$maxWidth} - #{$minWidth})));
+}
+

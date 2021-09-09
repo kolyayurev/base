@@ -1,0 +1,146 @@
+/* page */
+.page{
+    &__container{
+
+    }
+    &__heading{
+       
+    }
+    &__title{
+      
+    }
+    &__body{
+        
+    }
+    &__wrap{
+
+    }
+    &__img-box{
+        max-height: 300px;
+    }
+    &__img{
+        max-width: 100%;
+        max-height: 100%;
+    }
+    &__search{
+
+    }
+    &__search-form{
+        
+    }
+    &__paginator-box {
+        padding-top: 16px;
+    }
+
+    &__paginator {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+    }
+    &__paginator-item_prev{
+        margin-right: 30px;
+    }
+    &__paginator-item_prev,&__paginator-item_next{
+        &:hover{
+            .page__paginator-link {
+                background-color: cl(primary);
+                color: cl(white);
+            }
+        }
+    }
+    &__paginator-item {
+        margin-right: 30px;
+        
+        &:hover{
+            .page__paginator-link {
+                background-color: cl(primary);
+                color: cl(white);
+            }
+        }
+        &.active{
+            .page__paginator-link {
+                background-color: cl(primary);
+                color: cl(white);
+            }
+        } 
+    }
+
+    &__paginator-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 4px;
+        padding: 10px;
+        text-align: center;
+        transition: all .5s ease;
+    }
+
+
+}
+
+/* end page */
+
+
+/* card-page */
+.card-page{
+    &__content-panel{
+        display: flex;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        padding: 2rem;
+        min-height: 500px;
+        flex-wrap: wrap;
+        @include mq(md) {
+            margin-top: .5rem;
+            margin-bottom: .5rem;
+            padding: .5rem;
+            min-height: 0;
+        }
+    }
+    &__title{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 30px;
+        line-height: 120%;
+        color: cl(text-black);
+    }
+    &__title-2{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 120%;
+        color: cl(text-black);
+    }
+    &__image{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 50%;
+        padding: 1rem;
+        img{
+            max-width: 100%;
+        }
+        @include mq(md) {
+            display: none;
+        }
+    }
+    &__form{
+        flex-basis: 50%;
+        @include mq(md) {
+            flex-basis: 100%;
+        }
+    }
+    &__form-inner{
+        display: flex;
+        flex-direction: column;
+        max-width: 300px;
+        margin: 0 auto;
+        @include mq(md) {
+            max-width: 400px;
+        }
+    }
+}
+
+/* end card-page */

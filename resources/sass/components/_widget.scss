@@ -1,0 +1,21 @@
+
+.widget{
+    position: relative;
+    &__edit-button{
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: cl(primary);
+        color: cl(white);
+        padding: .5rem 1rem;
+        z-index: z(widget);
+    }
+    &:hover{
+        box-shadow: 0px 0 9px 0px;
+        .widget__edit-button{
+            display: block;
+        }
+    }
+
+}

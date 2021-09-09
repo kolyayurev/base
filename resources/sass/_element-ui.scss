@@ -1,0 +1,92 @@
+// // /* theme color */
+// $--color-primary: #32B17C;
+
+// $--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+// @import "~element-ui/packages/theme-chalk/src/index";
+//element-ui
+@import '~element-ui/lib/theme-chalk/index.css';
+
+/* el-dialog */
+.modal-dialog{
+    .el-dialog{
+         border-radius: 4px;
+        width: fit-content;
+    }
+}
+.modal-question{
+    .el-dialog__body-inner{
+        // max-width: 700px;
+    }
+}
+.footer-form__item{
+    .el-form-item__content{
+        line-height: inherit;
+    }
+    .el-form-item__error{
+        color: #fedcdc;
+    }
+}
+.el-dialog{
+    
+    &__body-inner{
+        margin: 0 auto;
+        max-width: 700px;
+        word-break: break-word;
+    }
+    .el-dialog__body {
+        padding: 5% 5% 4%;
+    }
+    .el-select{
+        width: 100%;
+    }
+    .el-form--label-left .el-form-item__label{
+        text-align: end !important;
+    }
+    // .el-form-item{
+    //     @media (max-width:400px) {
+    //         margin-bottom: 10px;
+    //     }
+    // }
+    .el-rate__icon{
+        font-size: 30px;
+    }
+}
+.el-form--label-top{
+    .el-form-item__label{
+        line-height: 20px;
+    }
+}
+/* end el-dialog */
+.el-notification{
+    border-radius: 4px !important;
+}
+.el-form-item.is-error{
+    .modal-card__input{
+        border-color: #F56C6C;
+    }
+}
+.el-input.is-active .el-input__inner, .el-input__inner:focus {
+    border: 1px solid cl(primary) !important;
+}
+.el-textarea__inner:focus{
+    border: 1px solid cl(primary) !important;
+}
+.el-input__inner:hover{
+    border: 1px solid cl(primary) !important;
+}
+.el-select .el-input.is-focus .el-input__inner{
+    border: 1px solid cl(primary) !important;
+}
+.el-message-box__headerbtn:focus .el-message-box__close, .el-message-box__headerbtn:hover .el-message-box__close{
+    color: cl(primary) !important;
+}
+.el-dialog__headerbtn:focus .el-dialog__close, .el-dialog__headerbtn:hover .el-dialog__close{
+    color: cl(primary) !important;
+}
+.el-form--label-top .el-form-item__label{
+    padding-bottom: 0 !important;
+}
+.el-select-dropdown__item.hover, .el-select-dropdown__item:hover{
+    background-color: #f0fffa !important;
+}

@@ -1,0 +1,29 @@
+
+// Variables
+@import 'variables';
+
+@import '~normalize.css/normalize.css';
+
+@import "~aos/dist/aos.css";
+
+// @import './slick';
+
+@import './functions';
+
+@import './mixins';
+
+@import './utilites';
+
+@import './bootstrap';
+
+@import './ui/index.scss';
+
+@import './components/index.scss';
+
+@import './common';
+
+@import './pages';
+
+@import './element-ui';
+
+

@@ -1,0 +1,83 @@
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+@mixin mq($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+   $width: map_get($breakpoints, $width);
+   @if $type == max {
+    $width: $width - 1px;
+   }
+   @media only screen and (#{$type}-width: $width) {
+    @content;
+   }
+  }
+}
+@mixin av($property, $startSize, $minSize: null) {
+    @include adaptiveValue($property, $startSize, $minSize);
+}
+@mixin adaptiveValue($property, $startSize, $minSize: null) {
+    #{$property}: av($startSize , $minSize);
+}
+@mixin avm($property, $startSize, $minSize: null) {
+    @include adaptiveValueWithMedia($property, $startSize, $minSize);
+}
+@mixin adaptiveValueWithMedia($property, $startSize, $minSize: null) {
+    @include adaptiveValue($property, $startSize, $minSize);
+    @include mq(max,min){
+        #{$property}: $startSize + px;
+    }
+    @include mq(min,max){
+        #{$property}: $minSize + px;
+    }
+}
+
+@mixin vw($property, $startSize) {
+    #{$property}: vw($startSize);
+}
+@mixin vwm($property, $startSize, $minSize: null) {
+    @include vwWithMedia($property, $startSize, $minSize);
+}
+@mixin vwWithMedia($property, $startSize, $minSize: null) {
+    @include vw($property, $startSize);
+    @if($minSize == null)
+    {
+      $minSize: $startSize/($maxWidth/$minWidth);
+    }
+    @include mq(max,min){
+        #{$property}: $startSize;
+    }
+    @include mq(min){
+        #{$property}: $minSize;
+    }
+}
+
+@mixin border($width: 1px, $style:solid, $color: black, $side:null) {
+    @if $side != null {
+        border-#{$side}: $width $style $color;
+    }
+
+    @else {
+        border: $width $style $color;
+    }
+}
+
+@mixin borderGrey($width: 1px, $style:solid, $side:null) {
+    @include border($width, $style, cl(border-grey), $side)
+}
+
+@mixin gridColumns($colums,$columnGap:40px) {
+    display: grid;
+    grid-template-columns: $colums;
+    grid-column-gap: $columnGap;
+}
+
+
+@mixin z-index($key) {
+    z-index: z($key);
+}
