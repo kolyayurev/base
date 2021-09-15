@@ -6,7 +6,7 @@ trait HasSeo
 {
     public function getH1()
     {
-        return $this->h1??$this->title??'';
+        return $this->h1??$this->name??'';
     }
     public function getMetaTitle()
     {
