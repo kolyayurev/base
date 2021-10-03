@@ -6,7 +6,7 @@ use Voyager;
 
 use Str;
 
-use App\Models\Page;
+use TCG\Voyager\Models\Page;
 
 use Butschster\Head\Contracts\Packages\PackageInterface;
 use Butschster\Head\Facades\PackageManager;

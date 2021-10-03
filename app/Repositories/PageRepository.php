@@ -1,7 +1,7 @@
 <?php
 namespace App\Repositories;
 
-use App\Models\{Page};
+use TCG\Voyager\Models\{Page};
 
 class PageRepository extends BaseRepository
 {
