@@ -43,6 +43,7 @@ class MetaTagsServiceProvider extends ServiceProvider
             $meta->setTitleSeparator('I');
             $meta->setTitle(setting('seo.meta_title'));
             $meta->setDescription(setting('seo.meta_description'));
+            $meta->setKeywords(setting('seo.meta_keywords'));
 
             $meta->setCanonical(build_canonical(true));
             // It just an imagination, you can automatically
@@ -121,7 +122,9 @@ class MetaTagsServiceProvider extends ServiceProvider
             if($page->getMetaDescription())
                 $this->setDescription($page->getMetaDescription());
 
-            $this->setCanonical($url);
+            $this
+                ->setCanonical($url)
+                ->setKeywords($page->getKeywords());
 
             $og = new OpenGraphPackage('OpenGraphPage');
 
