@@ -26,6 +26,10 @@ class PageController extends Controller
         $this->pageRepository        = $pageRepository;
     }
 
+    public function getExcludePages(){
+        return $this->excludePages;
+    }
+    
     public function home(Request $request)
     {
         $page = $this->getPage('home');
