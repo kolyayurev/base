@@ -27,6 +27,6 @@ Route::group(['prefix' => 'ajax','as'=>'ajax.','namespace'=>'Common','middleware
     Route::post('feedbacks', 'AjaxController@feedbackStore')->name('feedbacks.store');
 });
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => config('voyager.prefix')], function () {
     Voyager::routes();
 });
