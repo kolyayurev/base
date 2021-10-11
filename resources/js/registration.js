@@ -17,9 +17,10 @@ Vue.mixin(require('./mixins/base').default);
 import DialogFeedback from './components/DialogFeedback'
 Vue.component('v-dialog-feedback',DialogFeedback)
 
-// import { validePhone } from './validators'
-// window.validePhone = validePhone
+require('@/element-ui');
 
-require('./element-ui');
+require('@/i18n');
 
-require('./lang');
+require('@/router');
+
+require('@/validation');

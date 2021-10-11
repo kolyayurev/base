@@ -61,18 +61,18 @@ export default {
 			},
 			rules: {
 				name: [
-					{ required: true, message: this.$t('validation.required'), trigger: 'change' },
-					{ max: 255, message: this.$t('validation.max_length_exceeded'), trigger: 'change' }
+					{ required: true, message: lang.get('validation.required'), trigger: 'change' },
+					{ max: 255, message: lang.get('validation.max_length_exceeded'), trigger: 'change' }
 				],
 				phone: [
 					{ validator: validePhone,  trigger: 'change' },
 				],
 				email: [
-					{ type: 'email', message: this.$t('validation.email'), trigger: 'change' },
+					{ type: 'email', message: lang.get('validation.email'), trigger: 'change' },
 				],
 				body: [
-					{ required: true, message: this.$t('validation.required'), trigger: 'change' },
-					{ max: 1024, message: this.$t('validation.max_length_exceeded'), trigger: 'change' }
+					{ required: true, message: lang.get('validation.required'), trigger: 'change' },
+					{ max: 1024, message: lang.get('validation.max_length_exceeded'), trigger: 'change' }
 				],
 			}
 		}
@@ -93,7 +93,7 @@ export default {
 
 				_this.baseAxios(url, data, function (response) {
 						_this.closeDialog()
-						_this.successMsg($t('messages.review_successfully'),$t('messages.review_excerpt'),'/img/icons/ico-send.svg');
+						_this.successMsg(lang.get('messages.review_successfully'),lang.get('messages.review_excerpt'),'/img/icons/ico-send.svg');
 						_this.resetForm();
 				},
 				function (response) {

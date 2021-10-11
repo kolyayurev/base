@@ -1,5 +1,7 @@
 const mix = require("laravel-mix");
 const webpack = require('webpack');
+const path = require('path');
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -27,6 +29,11 @@ mix.webpackConfig({
             "element-ui/lib/locale/lang/ru-RU"
         )
     ]
+});
+
+mix.alias({
+    '@': path.join(__dirname, 'resources/js'),
+    ziggy: path.resolve('vendor/tightenco/ziggy/dist'),
 });
 
 if (mix.inProduction()) {

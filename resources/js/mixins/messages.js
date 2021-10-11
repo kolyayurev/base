@@ -4,9 +4,9 @@
 export const messages = {
   data(){
     return{
-      successMsgTitle: $t('messages.success'),
-      warningMsgTitle:$t('messages.warning'),
-      errorMsgTitle:$t('messages.error'),
+      successMsgTitle: lang.get('common.messages.success'),
+      warningMsgTitle:lang.get('common.messages.warning'),
+      errorMsgTitle:lang.get('common.messages.error'),
     }
   },
   methods: {
