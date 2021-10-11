@@ -37,13 +37,13 @@
         <x-button-up ></x-button-up>
     </div>
 
-    <script src="{{ mix('js/manifest.js') }}"></script>
-    <script src="{{ mix('js/vendor.js') }}"></script>
-    <script src="{{ mix('js/app.js') }}"></script>
     <script>
         var locale = '{{ app()->getLocale()}}';
         var fallbackLocale = '{{ config('app.fallback_locale')}}';
     </script>
+    <script src="{{ mix('js/manifest.js') }}"></script>
+    <script src="{{ mix('js/vendor.js') }}"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
 
     @can('browse_admin')
         <script src="{{voyager_asset('js/front.js')}}"></script>
