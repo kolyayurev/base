@@ -22,8 +22,8 @@ export default{
         },
         baseAxios(url,data,
             successCallback     = (r) => { this.successMsg(); },
-            errorCallback       = (r) => { this.errorMsg('Не удалось',r.data.message);},
             validationCallback  = (r) => { this.warningMsg('Не удалось',r.data.message);},
+            errorCallback       = (r) => { this.errorMsg('Не удалось',r.data.message);},
             defaultCallback     = (r) => { this.warningMsg(); },
             catchCallback       = (e) => { console.log(e); this.errorMsg(); },
             finallyCallback     = (r) => {}
