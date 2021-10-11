@@ -12,6 +12,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 window.Vue = require('vue').default;
 
+Object.defineProperty(Vue.prototype, '$_', { value: _ });
+
 Vue.mixin(require('./mixins/base').default);
 
 import DialogFeedback from './components/DialogFeedback'

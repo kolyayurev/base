@@ -14,16 +14,16 @@
 	  <el-form :model="model" :rules="rules" ref="form" label-width="120px" :label-position="labelPosition" >
 		  <slot name="field"></slot>
 
-			<el-form-item label="Ф.И.О" prop="name">
+			<el-form-item label="Ф.И.О" prop="name" :error="$_.head(errors.name)">
 				<el-input v-model="model.name" name="name"></el-input>
 			</el-form-item>
-			<el-form-item label="Телефон" prop="phone">
+			<el-form-item label="Телефон" prop="phone"  :error="$_.head(errors.phone)">>
 				<el-input v-model="model.phone" name="phone"></el-input>
 			</el-form-item>
-			<el-form-item label="E-mail" prop="email">
+			<el-form-item label="E-mail" prop="email" :error="$_.head(errors.email)">
 				<el-input v-model="model.email" name="email"></el-input>
 			</el-form-item>
-			<el-form-item label="Ваш отзыв" prop="body">
+			<el-form-item label="Ваш отзыв" prop="body" :error="$_.head(errors.body)">
 				<el-input type="textarea" :rows="5" v-model="model.body" name="body"></el-input>
 			</el-form-item>
 
@@ -53,6 +53,7 @@ export default {
 			labelPosition: 'left',
 			colors:['var(--accent)','var(--accent)','var(--accent)'],
 			voidColor:'var(--accent)' ,
+			errors:{},
 			model:{
 				name:'',
 				phone:'',
@@ -90,14 +91,14 @@ export default {
 				var _this = this
 				let data = new FormData(this.$refs.form.$el);
 				let url = _this.store_url;
-
+				this.errors = {};
 				_this.baseAxios(url, data, function (response) {
-						_this.closeDialog()
-						_this.successMsg(lang.get('messages.review_successfully'),lang.get('messages.review_excerpt'),'/img/icons/ico-send.svg');
-						_this.resetForm();
+					_this.closeDialog()
+					_this.successMsg(lang.get('messages.review_successfully'),lang.get('messages.review_excerpt'),'/img/icons/ico-send.svg');
+					_this.resetForm();
 				},
 				function (response) {
-						_this.warningMsg(response.data.message);
+					 _this.errors = response.data.messages;
 				});
 
 			} else {
@@ -108,7 +109,7 @@ export default {
 		resetForm() {
 			this.$refs.form.resetFields();
 			for (var key in this.model) {
-					this.model[key] = '';
+					this.model[key] = null;
 			}
 		},
 		resize(){
