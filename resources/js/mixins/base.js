@@ -25,7 +25,7 @@ export default{
             validationCallback  = (r) => { this.warningMsg('Не удалось',r.data.message);},
             errorCallback       = (r) => { this.errorMsg('Не удалось',r.data.message);},
             defaultCallback     = (r) => { this.warningMsg(); },
-            catchCallback       = (e) => { console.log(e); this.errorMsg(); },
+            catchCallback       = (e) => { this.errorMsg(); },
             finallyCallback     = (r) => {}
         ){
             this.startLoading()
