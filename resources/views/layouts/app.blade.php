@@ -2,8 +2,8 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" prefix="og: http://ogp.me/ns#" @yield('html-attribute')>
 
 <head>
-    @stack('metas')
     {!! Meta::toHtml() !!}
+    @stack('metas')
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
@@ -54,7 +54,7 @@
         @stack('vue-modals')
     </div>
     @stack('vue')
-    <script async>
+    <script>
         var vueModals = new Vue({
             el : '#modals',
             data(){
