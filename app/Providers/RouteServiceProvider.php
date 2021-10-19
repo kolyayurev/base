@@ -28,6 +28,9 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected $namespace = 'App\\Http\\Controllers';
 
+    protected $voyagerNamespace = 'App\\Voyager\\Http\\Controllers';
+
+
     /**
      * Define your route model bindings, pattern filters, etc.
      *
@@ -46,6 +49,11 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
+
+            Route::prefix(config('voyager.prefix'))
+                ->middleware('web')
+                ->namespace($this->voyagerNamespace)
+                ->group(base_path('routes/voyager.php'));
 
             if (app()->environment('local')){
                 $this->mapDevRoutes();
