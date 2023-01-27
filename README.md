@@ -1,3 +1,15 @@
+## Install
+
+``` 
+composer install
+npm install
+npm run prod
+
+php artisan storage:link
+php artisan voyager:install
+
+```
+
 ## Generate routes file
 
 ```
@@ -15,3 +27,4 @@ php artisan lang:js --json --quiet
 ```
 php artisan sitemap:generate
 ```
+

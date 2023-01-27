@@ -16,8 +16,8 @@ Object.defineProperty(Vue.prototype, '$_', { value: _ });
 
 Vue.mixin(require('./mixins/base').default);
 
-import DialogFeedback from './components/DialogFeedback'
-Vue.component('v-dialog-feedback',DialogFeedback)
+// import DialogFeedback from './components/DialogFeedback'
+// Vue.component('v-dialog-feedback',DialogFeedback)
 
 require('@/element-ui');
 
